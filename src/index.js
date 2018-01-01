@@ -5,4 +5,4 @@ const question = () => {
   return `Hello ${userName}!`;
 };
 
-export default { question };
+export { question };
