@@ -1,5 +1,6 @@
-#!/usr/local/bin/node
-import { question } from '../index'
+#!/usr/bin/env node
+import { question } from '../';
+
 console.log('Welcome to the Brain Games!');
 
 console.log(question());
