@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { question } from '../';
+import { question, welcomMsg, userName } from '../';
 
-console.log('Welcome to the Brain Games!');
+console.log(welcomMsg);
 
-console.log(question());
+console.log(question(userName));
