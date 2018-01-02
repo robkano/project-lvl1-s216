@@ -1,22 +1,14 @@
 const readlineSync = require('readline-sync');
 
-const welcomMsg = 'Welcome to the Brain Games!';
-const userName = readlineSync.question('May I have your name? ');
-
-const greeting = name => `Hello ${name}!\n`;
-
-const generator = () => {
-  const num = Math.floor((Math.random() * 40) / 2);
-  return num;
-};
-
-const wrongAnswer = () => {
-  return `'yes' is wrong answer ;(. Correct answer was 'no'. 
-  Let's try again, ${userName}!`;
-};
-
-
-const quizQuestion = () => {
+export default () => {
+  console.log('Welcome to the Brain Games!');
+  console.log('Answer "yes" if number even otherwise answer "no".\n');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello ${userName}!\n`);
+  const generator = () => {
+    const num = Math.floor((Math.random() * 40) / 2);
+    return num;
+  };
   let i = 0;
   while (i < 3) {
     const num = generator();
@@ -27,12 +19,9 @@ const quizQuestion = () => {
     if (answer === isEven) {
       console.log('Correct');
     } else {
-      return wrongAnswer();
+      return `'yes' is wrong answer ;(. Correct answer was 'no'. 
+        Let's try again, ${userName}!`;
     }
   }
   return `Congratulations, ${userName}`;
 };
-
-
-export { greeting, quizQuestion, welcomMsg, userName, generator };
-
