@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import index from '../';
+import even from '../games/even';
 
-console.log(index());
+console.log(even());

@@ -5,7 +5,8 @@
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
@@ -34,6 +35,7 @@
   },
   "dependencies": {
     "eslint": "^4.14.0",
+    "hexlet-pairs": "^1.0.5",
     "readline-sync": "^1.4.7"
   }
 }

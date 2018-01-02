@@ -1,27 +1,30 @@
+import { cons } from 'hexlet-pairs';
+
 const readlineSync = require('readline-sync');
 
-export default () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
+const welcomeMsg = () => 'Welcome to the Brain Games!';
+
+const grittingUser = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello ${userName}!\n`);
-  const generator = () => {
-    const num = Math.floor((Math.random() * 40) / 2);
-    return num;
-  };
-  let i = 0;
-  while (i < 3) {
-    const num = generator();
-    console.log(`Question: ${num}`);
-    const isEven = num % 2 ? 'no' : 'yes';
-    const answer = readlineSync.question('Your answer: ');
-    i += 1;
-    if (answer === isEven) {
-      console.log('Correct');
-    } else {
-      return `'yes' is wrong answer ;(. Correct answer was 'no'. 
-        Let's try again, ${userName}!`;
-    }
-  }
-  return `Congratulations, ${userName}`;
+  return userName;
 };
+
+const numberGenerator = () => {
+  const num = Math.floor((Math.random() * 40) / 2);
+  return num;
+};
+
+const makeEqution = (num1, num2) => cons(num1, num2);
+
+const wrongAnswer = (user) => {
+  const message = `Sorry, but it's wrong answer. Let's try again ${user}`;
+  return message;
+};
+
+const congrantsMsg = (user) => {
+  const message = `Good Job ${user}!!!`;
+  return message;
+};
+
+export { welcomeMsg, grittingUser, numberGenerator, wrongAnswer, congrantsMsg, makeEqution };
