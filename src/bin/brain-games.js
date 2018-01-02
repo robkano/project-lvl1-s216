@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { question, welcomMsg, userName } from '../';
+import { welcomMsg, userName, greeting } from '../';
 
 console.log(welcomMsg);
 
-console.log(question(userName));
+console.log(greeting(userName));

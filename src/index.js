@@ -3,6 +3,8 @@ const readlineSync = require('readline-sync');
 const welcomMsg = 'Welcome to the Brain Games!';
 const userName = readlineSync.question('May I have your name? ');
 
+const greeting = name => `Hello ${name}!\n`;
+
 const generator = () => {
   const num = Math.floor((Math.random() * 40) / 2);
   return num;
@@ -13,7 +15,6 @@ const wrongAnswer = () => {
   Let's try again, ${userName}!`;
 };
 
-const greeting = name => `Hello ${name}!\n`;
 
 const quizQuestion = () => {
   let i = 0;
