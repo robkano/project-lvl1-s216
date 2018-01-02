@@ -1,5 +1,6 @@
-import { car, cdr } from 'hexlet-pairs';
-import { welcomeMsg, grittingUser, numberGenerator, wrongAnswer, congrantsMsg, makeEqution } from '../';
+import { welcomeMsg, grittingUser, numberGenerator,
+  wrongAnswer, congrantsMsg, equtionResult,
+  createOperators, equtionShow } from '../';
 
 const readlineSync = require('readline-sync');
 
@@ -10,10 +11,12 @@ export default () => {
 
   let i = 0;
   while (i < 3) {
-    const eqution = makeEqution(numberGenerator(), numberGenerator());
-    console.log(`${car(eqution)} + ${cdr(eqution)}`);
+    const num1 = numberGenerator();
+    const num2 = numberGenerator();
+    const oparator = createOperators();
+    console.log(`Question: ${equtionShow(num1, num2, oparator)}`);
     const usersAnswer = Number(readlineSync.question('Your answer: '));
-    const rigthAnswer = car(eqution) + cdr(eqution);
+    const rigthAnswer = equtionResult(num1, num2, oparator);
     if (rigthAnswer === usersAnswer) {
       console.log('Correct\n');
     } else {

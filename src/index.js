@@ -27,4 +27,35 @@ const congrantsMsg = (user) => {
   return message;
 };
 
-export { welcomeMsg, grittingUser, numberGenerator, wrongAnswer, congrantsMsg, makeEqution };
+// Math operators
+const createOperators = () => {
+  const num = Math.floor((Math.random() * 6) / 2);
+  switch (num) {
+    case 1: return '+';
+    case 2: return '-';
+    case 0: return '*';
+    default: console.log(null);
+  }
+};
+
+const equtionResult = (num1, num2, opr) => {
+  switch (opr) {
+    case '+': return num1 + num2;
+    case '-': return num1 - num2;
+    case '*': return num1 * num2;
+    default: console.log(null);
+  }
+};
+
+const equtionShow = (num1, num2, opr) => {
+  switch (opr) {
+    case '+': return `${num1} + ${num2}`;
+    case '-': return `${num1} - ${num2}`;
+    case '*': return `${num1} * ${num2}`;
+    default: console.log(null);
+  }
+};
+
+export { welcomeMsg, grittingUser, numberGenerator,
+  wrongAnswer, congrantsMsg, makeEqution,
+  createOperators, equtionResult, equtionShow };
