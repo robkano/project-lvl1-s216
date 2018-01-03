@@ -1,32 +1,37 @@
-import { welcomeMsg, grittingUser, numberGenerator, congrantsMsg, wrongAnswer } from '../';
+import { cons } from 'hexlet-pairs';
+import index from '../index';
 
 const readlineSync = require('readline-sync');
 
-export default () => {
-  console.log(welcomeMsg());
-  console.log('Answer "yes" if number even otherwise answer "no".\n');
-  const userName = grittingUser();
+const createQuestion = () => {
+  const message = 'Answer "yes" if number even otherwise answer "no".\n';
+  return message;
+};
 
-  const generateCorrectAnswer = (answer) => {
-    if (answer === 'yes') {
-      return true;
-    } else if (answer === 'no') {
-      return false;
-    }
+const gettingAnswer = (string) => {
+  const value = readlineSync.question(string);
+  return value;
+};
+
+const generator = () => {
+  const createNum = () => {
+    const num = Math.floor((Math.random() * 40) / 2);
+    return num;
   };
 
-  let i = 0;
-  while (i < 3) {
-    const num = numberGenerator();
-    console.log(`Question: ${num}`);
-    const rigthAnswer = num % 2 === 0;
-    const userAnswer = generateCorrectAnswer(readlineSync.question('Your answer: '));
-    if (rigthAnswer === userAnswer) {
-      console.log('Correct\n');
-    } else {
-      return wrongAnswer(userName);
-    }
-    i += 1;
-  }
-  return congrantsMsg(userName);
+  const isEven = (num) => {
+    if (num % 2 === 0) {
+      return 'yes';
+    } return 'no';
+  };
+
+  const makePair = (num, result) => cons(num, result);
+
+  const num = createNum();
+  const result = isEven(num);
+  const pair = makePair(num, result);
+  return pair;
 };
+const mainQuestion = createQuestion();
+
+export default () => index(generator, mainQuestion, gettingAnswer);

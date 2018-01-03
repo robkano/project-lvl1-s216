@@ -1,23 +1,21 @@
-// import { cons } from 'hexlet-pairs';
+import { car, cdr } from 'hexlet-pairs';
 
 const readlineSync = require('readline-sync');
 
-const welcomeMsg = () => 'Welcome to the Brain Games!';
+const welcomeMsg = () => {
+  const message = 'Welcome to the Brain Games!';
+  return message;
+};
 
-const grittingUser = () => {
+const greettingUser = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello ${userName}!\n`);
   return userName;
 };
 
-const numberGenerator = () => {
-  const num = Math.floor((Math.random() * 40) / 2);
-  return num;
-};
-
 const wrongAnswer = (user) => {
   const message = `Sorry, but it's wrong answer. Let's try again ${user}`;
-  return message;
+  console.log(message);
 };
 
 const congrantsMsg = (user) => {
@@ -25,39 +23,27 @@ const congrantsMsg = (user) => {
   return message;
 };
 
+export default (func, mainQuetion, gettingAnswer) => {
+  console.log(welcomeMsg());
+  console.log(mainQuetion);
+  const userName = greettingUser();
+  congrantsMsg(userName);
 
-// Math operators
-const createOperators = () => {
-  const num = Math.floor((Math.random() * 6) / 2);
-  switch (num) {
-    case 1: return '+';
-    case 2: return '-';
-    case 0: return '*';
-    default: console.log(null);
+  let i = 0;
+  while (i < 3) {
+    const pair = func();
+    const question = car(pair);
+    const result = cdr(pair);
+
+    console.log(`Question: ${question}`);
+    const userAnswer = gettingAnswer('Your answer: ');
+
+    if (result === userAnswer) {
+      console.log('Correct!\n');
+    } else {
+      return wrongAnswer(userName);
+    }
+    i += 1;
   }
+  console.log(congrantsMsg(userName));
 };
-
-const equtionResult = (num1, num2, opr) => {
-  switch (opr) {
-    case '+': return num1 + num2;
-    case '-': return num1 - num2;
-    case '*': return num1 * num2;
-    default: console.log(null);
-  }
-};
-
-const equtionShow = (num1, num2, opr) => {
-  switch (opr) {
-    case '+': return `${num1} + ${num2}`;
-    case '-': return `${num1} - ${num2}`;
-    case '*': return `${num1} * ${num2}`;
-    default: console.log(null);
-  }
-};
-
-// const gcbResult = (num1, num2) => {
-// };
-
-export { welcomeMsg, grittingUser, numberGenerator,
-  wrongAnswer, congrantsMsg,
-  createOperators, equtionResult, equtionShow };
