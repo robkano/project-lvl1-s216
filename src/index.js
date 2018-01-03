@@ -1,4 +1,4 @@
-import { cons } from 'hexlet-pairs';
+// import { cons } from 'hexlet-pairs';
 
 const readlineSync = require('readline-sync');
 
@@ -15,8 +15,6 @@ const numberGenerator = () => {
   return num;
 };
 
-const makeEqution = (num1, num2) => cons(num1, num2);
-
 const wrongAnswer = (user) => {
   const message = `Sorry, but it's wrong answer. Let's try again ${user}`;
   return message;
@@ -26,6 +24,7 @@ const congrantsMsg = (user) => {
   const message = `Good Job ${user}!!!`;
   return message;
 };
+
 
 // Math operators
 const createOperators = () => {
@@ -56,6 +55,9 @@ const equtionShow = (num1, num2, opr) => {
   }
 };
 
+// const gcbResult = (num1, num2) => {
+// };
+
 export { welcomeMsg, grittingUser, numberGenerator,
-  wrongAnswer, congrantsMsg, makeEqution,
+  wrongAnswer, congrantsMsg,
   createOperators, equtionResult, equtionShow };

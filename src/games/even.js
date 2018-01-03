@@ -1,4 +1,4 @@
-import { welcomeMsg, grittingUser, numberGenerator, wrongAnswer, congrantsMsg } from '../';
+import { welcomeMsg, grittingUser, numberGenerator, congrantsMsg, wrongAnswer } from '../';
 
 const readlineSync = require('readline-sync');
 
@@ -21,7 +21,7 @@ export default () => {
     console.log(`Question: ${num}`);
     const rigthAnswer = num % 2 === 0;
     const userAnswer = generateCorrectAnswer(readlineSync.question('Your answer: '));
-    if (userAnswer === rigthAnswer) {
+    if (rigthAnswer === userAnswer) {
       console.log('Correct\n');
     } else {
       return wrongAnswer(userName);

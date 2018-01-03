@@ -1,6 +1,11 @@
+import { car, cdr, toString } from 'hexlet-pairs';
+
 const readlineSync = require('readline-sync');
 
-const welcomeMsg = () => 'Welcome to the Brain Games!';
+const welcomeMsg = () => {
+  const message = 'Welcome to the Brain Games!';
+  return message;
+};
 
 const greettingUser = () => {
   const userName = readlineSync.question('May I have your name? ');
@@ -10,7 +15,7 @@ const greettingUser = () => {
 
 const wrongAnswer = (user) => {
   const message = `Sorry, but it's wrong answer. Let's try again ${user}`;
-  return message;
+  console.log(message);
 };
 
 const congrantsMsg = (user) => {
@@ -18,23 +23,27 @@ const congrantsMsg = (user) => {
   return message;
 };
 
-export default (openningQuestion, quiz, answer, result) => {
-  welcomeMsg();
-  console.log(openningQuestion);
+export default (func, mainQuetion, gettingAnswer) => {
+  console.log(welcomeMsg());
+  console.log(mainQuetion);
   const userName = greettingUser();
+  congrantsMsg(userName);
 
-  // Loop of three questions
   let i = 0;
   while (i < 3) {
-    console.log(quiz);
-    const userAnswer = answer;
-    const rigthAnswer = result;
-    if (rigthAnswer === userAnswer) {
-      console.log('Correct\n');
+    const pair = func();
+    const question = car(pair);
+    const result = cdr(pair);
+
+    console.log(`Question: ${question}`);
+    const userAnswer = gettingAnswer('Your answer: ');
+
+    if (result === userAnswer) {
+      console.log('Correct!\n');
     } else {
       return wrongAnswer(userName);
     }
     i += 1;
   }
-  return congrantsMsg(userName);
+  console.log(congrantsMsg(userName));
 };
