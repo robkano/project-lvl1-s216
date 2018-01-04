@@ -13,6 +13,11 @@ const greettingUser = () => {
   return userName;
 };
 
+const gettingAnswer = (string) => {
+  const value = readlineSync.question(string);
+  return value;
+};
+
 const wrongAnswer = (user) => {
   const message = `Sorry, but it's wrong answer. Let's try again ${user}`;
   console.log(message);
@@ -23,22 +28,22 @@ const congrantsMsg = (user) => {
   return message;
 };
 
-export default (func, mainQuetion, gettingAnswer) => {
+export default (gameGenerator, gameQuetion) => {
   console.log(welcomeMsg());
-  console.log(mainQuetion);
+  console.log(gameQuetion);
   const userName = greettingUser();
   congrantsMsg(userName);
 
   let i = 0;
   while (i < 3) {
-    const pair = func();
+    const pair = gameGenerator();
     const question = car(pair);
     const result = cdr(pair);
 
     console.log(`Question: ${question}`);
     const userAnswer = gettingAnswer('Your answer: ');
 
-    if (result === userAnswer) {
+    if (String(result) === userAnswer) {
       console.log('Correct!\n');
     } else {
       return wrongAnswer(userName);

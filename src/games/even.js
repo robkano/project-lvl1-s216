@@ -1,19 +1,12 @@
 import { cons } from 'hexlet-pairs';
 import index from '../index';
 
-const readlineSync = require('readline-sync');
-
-const createQuestion = () => {
+const mainQuestion = () => {
   const message = 'Answer "yes" if number even otherwise answer "no".\n';
   return message;
 };
 
-const gettingAnswer = (string) => {
-  const value = readlineSync.question(string);
-  return value;
-};
-
-const generator = () => {
+const gameGenerator = () => {
   const createNum = () => {
     const num = Math.floor((Math.random() * 40) / 2);
     return num;
@@ -25,13 +18,13 @@ const generator = () => {
     } return 'no';
   };
 
-  const makePair = (num, result) => cons(num, result);
+  const createPair = (num, result) => cons(num, result);
 
   const num = createNum();
   const result = isEven(num);
-  const pair = makePair(num, result);
+  const pair = createPair(num, result);
   return pair;
 };
-const mainQuestion = createQuestion();
+const gameQuestion = mainQuestion();
 
-export default () => index(generator, mainQuestion, gettingAnswer);
+export default () => index(gameGenerator, gameQuestion);
