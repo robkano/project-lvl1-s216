@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import index from '../index';
+import gameProsses from '../index';
 
 const mainQuestion = () => {
   const message = 'Answer "yes" if number even otherwise answer "no".\n';
@@ -27,4 +27,4 @@ const gameGenerator = () => {
 };
 const gameQuestion = mainQuestion();
 
-export default () => index(gameGenerator, gameQuestion);
+export default () => gameProsses(gameGenerator, gameQuestion);

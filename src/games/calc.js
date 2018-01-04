@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import index from '../index';
+import gameProsses from '../index';
 
 const gameQuestion = () => {
   const message = 'What is the result of the expression?\n';
@@ -63,4 +63,4 @@ const gameGenerator = () => {
 
 const mainQuestion = gameQuestion();
 
-export default () => index(gameGenerator, mainQuestion);
+export default () => gameProsses(gameGenerator, mainQuestion);

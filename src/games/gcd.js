@@ -1,5 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import index from '../index';
+import gameProsses from '../index';
 
 const mainQuestion = () => {
   const message = 'Find the greatest common divisor of given numbers.\n';
@@ -34,4 +34,4 @@ const gameGenerator = () => {
 
 const gameQuestion = mainQuestion();
 
-export default () => index(gameGenerator, gameQuestion);
+export default () => gameProsses(gameGenerator, gameQuestion);
