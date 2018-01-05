@@ -1,5 +1,6 @@
 import { cons } from 'hexlet-pairs';
-import gameProsses from '../index';
+import gameProsses from '../';
+import genarateNumber from '../moduls/generateNumber';
 
 const mainQuestion = () => {
   const message = 'Answer "yes" if number even otherwise answer "no".\n';
@@ -7,24 +8,16 @@ const mainQuestion = () => {
 };
 
 const gameGenerator = () => {
-  const createNum = () => {
-    const num = Math.floor((Math.random() * 40) / 2);
-    return num;
-  };
-
   const isEven = (num) => {
     if (num % 2 === 0) {
       return 'yes';
     } return 'no';
   };
 
-  const createPair = (num, result) => cons(num, result);
-
-  const num = createNum();
+  const num = genarateNumber(1, 100);
   const result = isEven(num);
-  const pair = createPair(num, result);
-  return pair;
+  const questionAndResult = cons(num, result);
+  return questionAndResult;
 };
-const gameQuestion = mainQuestion();
 
-export default () => gameProsses(gameGenerator, gameQuestion);
+export default () => gameProsses(gameGenerator, mainQuestion);
