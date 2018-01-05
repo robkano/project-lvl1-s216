@@ -28,9 +28,9 @@ const congrantsMsg = (user) => {
   return message;
 };
 
-export default (gameGenerator, gameQuetion) => {
+export default (gameGenerator, mainQuetion) => {
   console.log(welcomeMsg());
-  console.log(gameQuetion);
+  console.log(mainQuetion());
   const userName = greettingUser();
   congrantsMsg(userName);
 
