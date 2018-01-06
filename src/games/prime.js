@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
 import genarateNumber from '../moduls/generateNumber';
 
-const mainQuestion = 'Is this number prime?\n';
+const mainQuestion = 'Is this number prime?';
 
 const gameGenerator = () => {
   const isPrime = (num) => {

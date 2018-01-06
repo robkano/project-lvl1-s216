@@ -30,7 +30,7 @@ const congrantsMsg = (user) => {
 
 export default (gameGenerator, mainQuetion) => {
   console.log(welcomeMsg());
-  console.log(mainQuetion);
+  console.log(`${mainQuetion}\n`);
   const userName = greettingUser();
   congrantsMsg(userName);
 

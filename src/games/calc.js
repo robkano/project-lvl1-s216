@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
 import genarateNumber from '../moduls/generateNumber';
 
-const mainQuestion = 'What is the result of the expression?\n';
+const mainQuestion = 'What is the result of the expression?';
 
 const gameGenerator = () => {
   const createOperators = () => {
