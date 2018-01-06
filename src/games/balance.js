@@ -2,10 +2,7 @@ import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
 import genarateNumber from '../moduls/generateNumber';
 
-const mainQuestion = () => {
-  const message = 'Balance the given number.\n';
-  return message;
-};
+const mainQuestion = 'Balance the given number.\n';
 
 const gameGenerator = () => {
   const balance = (num) => {

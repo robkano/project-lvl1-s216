@@ -2,10 +2,7 @@ import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
 import genarateNumber from '../moduls/generateNumber';
 
-const mainQuestion = () => {
-  const message = 'Answer "yes" if number even otherwise answer "no".\n';
-  return message;
-};
+const mainQuestion = 'Answer "yes" if number even otherwise answer "no".\n';
 
 const gameGenerator = () => {
   const isEven = (num) => {

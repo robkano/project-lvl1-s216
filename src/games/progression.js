@@ -2,10 +2,7 @@ import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
 import generateSequence from '../moduls/generateSequence';
 
-const mainQuestion = () => {
-  const message = 'What number is missing in this progression?.\n';
-  return message;
-};
+const mainQuestion = 'What number is missing in this progression?\n';
 
 const gameGenerator = () => {
   const hideNumber = (arr) => {
