@@ -1,20 +1,31 @@
 import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
-import generateSequence from '../moduls/generateSequence';
+import genarateNumber from '../moduls/generateNumber';
 
 const mainQuestion = 'What number is missing in this progression?';
 
 const gameGenerator = () => {
-  const hideNumber = (arr) => {
-    const str = arr.map(String);
-    const i = Math.floor(Math.random() * 10);
-    const result = str[i];
-    str.splice(i, 1, '..');
-    return cons(str.join(' '), result);
+  const sequence = (num) => {
+    let i = 1;
+    let result = '';
+    let hidenNum = 0;
+    let n = num;
+    const x = Math.floor(Math.random() * 10);
+    while (i < 10) {
+      result += `${n} `;
+      if (i === x) {
+        result += '.. ';
+        n += 2;
+        hidenNum += n;
+      }
+      n += 2;
+      i += 1;
+    }
+    return cons(result, hidenNum);
   };
 
-  const sequnce = generateSequence(2);
-  const questionAndResult = hideNumber(sequnce);
+  const num = genarateNumber(1, 100);
+  const questionAndResult = sequence(num);
 
   return questionAndResult;
 };
