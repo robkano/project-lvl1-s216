@@ -7,18 +7,21 @@ const mainQuestion = 'Is this number prime?';
 const gameGenerator = () => {
   const isPrime = (num) => {
     if (num < 2) {
-      return 'no';
+      return false;
     }
     for (let div = 2; div < num; div += 1) {
       if (num % div === 0) {
-        return 'no';
+        return false;
       }
     }
-    return 'yes';
+    return true;
   };
 
+  const checkBoolean = value => (value ? 'yes' : 'no');
+
   const num = genarateNumber(1, 100);
-  const result = isPrime(num);
+  const prime = isPrime(num);
+  const result = checkBoolean(prime);
   const questionAndResult = cons(num, result);
   return questionAndResult;
 };
