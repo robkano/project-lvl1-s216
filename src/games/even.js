@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
-import getRandomNumber from '../moduls/getRandomNumber';
+import getRandomNumber from '../utils/getRandomNumber';
 
 const mainQuestion = 'Answer "yes" if number even otherwise answer "no".';
 

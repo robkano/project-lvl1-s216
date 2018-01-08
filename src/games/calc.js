@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
-import getRandomNumber from '../moduls/getRandomNumber';
+import getRandomNumber from '../utils/getRandomNumber';
 
 const mainQuestion = 'What is the result of the expression?';
 
