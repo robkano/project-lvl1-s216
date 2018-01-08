@@ -1,6 +1,6 @@
 {
   "name": "brain-games-robkano",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Hexlet's first project",
   "main": "index.js",
   "bin": {
