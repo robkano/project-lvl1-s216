@@ -1,33 +1,28 @@
 import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
-import getRandomNumber from '../moduls/getRandomNumber';
+import getRandomNumber from '../utils/getRandomNumber';
 
 const mainQuestion = 'What number is missing in this progression?';
 
 const gameGenerator = () => {
-  const createSequence = (startValue, interval, n) => (startValue + (interval * (n - 1)));
+  const nThMemberOfArithProgr = (startValue, interval, n) => (startValue + (interval * (n - 1)));
 
+  const startValue = getRandomNumber(1, 100);
+  const interval = getRandomNumber(1, 5);
+  const hiddenNumElem = getRandomNumber(1, 10);
+  const hiddenNum = nThMemberOfArithProgr(startValue, interval, hiddenNumElem);
 
   const createProgression = (n) => {
-    const startValue = getRandomNumber(1, 100);
-    const interval = getRandomNumber(1, 5);
-    const hidenNumElem = getRandomNumber(1, 10);
-    let hidenNum = 0;
-
-    let i = 1;
-    let result = ' ';
-    while (i < n) {
-      result += `${createSequence(startValue, interval, i)} `;
-      if (i === hidenNumElem) {
-        result += '.. ';
-        hidenNum = createSequence(startValue, interval, i += 1);
-      }
-      i += 1;
+    if (n === 0) {
+      return nThMemberOfArithProgr(startValue, interval, n);
     }
-    return cons(result, hidenNum);
+    if (n === hiddenNumElem) {
+      return `${createProgression(n - 1)} ..`;
+    }
+    return `${createProgression(n - 1)} ${nThMemberOfArithProgr(startValue, interval, n)}`;
   };
 
-  const questionAndResult = createProgression(10);
+  const questionAndResult = cons(createProgression(10), hiddenNum);
 
   return questionAndResult;
 };
