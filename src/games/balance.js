@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
-import genarateNumber from '../moduls/generateNumber';
+import getRandomNumber from '../moduls/getRandomNumber';
 
 const mainQuestion = 'Balance the given number.';
 
@@ -17,7 +17,7 @@ const gameGenerator = () => {
     return number.join('');
   };
 
-  const num = genarateNumber(1, 500);
+  const num = getRandomNumber(1, 500);
   const result = balance(num);
   const question = `${num}`;
   const questionAndResult = cons(question, result);

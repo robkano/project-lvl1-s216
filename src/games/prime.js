@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
-import genarateNumber from '../moduls/generateNumber';
+import getRandomNumber from '../moduls/getRandomNumber';
 
 const mainQuestion = 'Is this number prime?';
 
@@ -17,11 +17,8 @@ const gameGenerator = () => {
     return true;
   };
 
-  const checkBoolean = value => (value ? 'yes' : 'no');
-
-  const num = genarateNumber(1, 100);
-  const prime = isPrime(num);
-  const result = checkBoolean(prime);
+  const num = getRandomNumber(1, 100);
+  const result = isPrime(num) ? 'yes' : 'no';
   const questionAndResult = cons(num, result);
   return questionAndResult;
 };

@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import gameProsses from '../';
-import genarateNumber from '../moduls/generateNumber';
+import getRandomNumber from '../moduls/getRandomNumber';
 
 const mainQuestion = 'What is the result of the expression?';
 
@@ -41,8 +41,8 @@ const gameGenerator = () => {
     return questionAndResult;
   };
 
-  const num1 = genarateNumber(1, 100);
-  const num2 = genarateNumber(1, 100);
+  const num1 = getRandomNumber(1, 100);
+  const num2 = getRandomNumber(1, 100);
   const oparator = createOperators();
   const questionAndResult = createQuiz(num1, num2, oparator);
 
