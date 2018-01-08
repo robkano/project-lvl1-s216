@@ -7,12 +7,12 @@ const mainQuestion = 'Answer "yes" if number even otherwise answer "no".';
 const gameGenerator = () => {
   const isEven = (num) => {
     if (num % 2 === 0) {
-      return 'yes';
-    } return 'no';
+      return true;
+    } return false;
   };
 
   const num = getRandomNumber(1, 100);
-  const result = isEven(num);
+  const result = isEven(num) ? 'yes' : 'no';
   const questionAndResult = cons(num, result);
   return questionAndResult;
 };
