@@ -8,3 +8,20 @@ make install
 </a>
 
 [![Build Status](https://travis-ci.org/robkano/project-lvl1-s216.svg?branch=master)](https://travis-ci.org/robkano/project-lvl1-s216)
+
+
+<p>This is my first training project as programmer in Hexlet educational centre (<href="https://en.hexlet.io/pages/about">).</p>
+
+<p>Project contains small console games:</p>
+
+<p>brain-balance</p>
+<p>brain-calc</p>
+<p>brain-even</p>
+<p>brain-gcd</p>
+<p>brain-prime</p>
+<p>brain-progression</p>
+
+<p>Installation: npm install -g brain-games-robkano</p>
+
+
+
