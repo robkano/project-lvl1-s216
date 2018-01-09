@@ -10,7 +10,7 @@
 
 
 <p>This is my first training project as programmer in Hexlet educational centre 
-<a href="https://en.hexlet.io/pages/about">Hexlet</a></p>
+<a href="https://ru.hexlet.io/pages/about">Hexlet</a></p>
 
 <p>Project contains small console games:</p>
 
