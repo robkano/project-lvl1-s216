@@ -9,9 +9,8 @@
 [![Build Status](https://travis-ci.org/robkano/project-lvl1-s216.svg?branch=master)](https://travis-ci.org/robkano/project-lvl1-s216)
 
 
-<p>This is my first training project as programmer in Hexlet educational centre.</p>
-
-<a href="https://en.hexlet.io/pages/about">Hexlet</a>)
+<p>This is my first training project as programmer in Hexlet educational centre 
+<a href="https://en.hexlet.io/pages/about">Hexlet</a></p>
 
 <p>Project contains small console games:</p>
 
