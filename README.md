@@ -25,7 +25,7 @@ This is my first training project as programmer in Hexlet educational centre
 - npm install -g brain-games-robkano
 
 ## Example
-[![asciicast](https://asciinema.org/a/NppMaWtuBGbtiyidHBwHOj27b)
+[![asciicast](https://asciinema.org/a/NppMaWtuBGbtiyidHBwHOj27b.png)](https://asciinema.org/a/NppMaWtuBGbtiyidHBwHOj27b)
 
 
 
